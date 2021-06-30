@@ -13,6 +13,7 @@ def main():
     round4 = playerO(round3)
     print(round4)
     round5 = playerX(round4)
+    winningTest(round5)
     print(round5)
     round6 = playerO(round5)
     print(round6)
@@ -37,6 +38,44 @@ def playerO(theBoard):
     O_Move = str(input("Player O Move: "))
     O_Board = theBoard.replace(O_Move, "O")
     return O_Board
+
+def winningTest(round):
+    pureBoard = round.replace("\n", "")
+    gameBoardArr = pureBoard.split("|")
+
+    while '' in gameBoardArr:
+        gameBoardArr.remove('')
+
+    #cover horiztonals
+    if gameBoardArr[0] == gameBoardArr[1] == gameBoardArr[2]:
+        print("You Win!")
+
+    elif gameBoardArr[3] == gameBoardArr[4] == gameBoardArr[5]:
+        print("You Win!")
+
+    elif gameBoardArr[6] == gameBoardArr[7] == gameBoardArr[8]:
+        print("You Win!")
+
+    #cover verticals
+    elif gameBoardArr[0] == gameBoardArr[3] == gameBoardArr[6]:
+        print("You Win!")
+
+    elif gameBoardArr[1] == gameBoardArr[4] == gameBoardArr[7]:
+        print("You Win!")
+
+    elif gameBoardArr[2] == gameBoardArr[5] == gameBoardArr[8]:
+        print("You Win!")
+
+    #cover diagonals
+    elif gameBoardArr[0] == gameBoardArr[4] == gameBoardArr[8]:
+        print("You Win!")
+
+    elif gameBoardArr[2] == gameBoardArr[4] == gameBoardArr[6]:
+        print("You Win!")
+
+    else:
+        print("Keep playing!")
+
 
 #runs the program
 main()
