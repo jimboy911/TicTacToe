@@ -16,12 +16,16 @@ def main():
     winningTest(round5)
     print(round5)
     round6 = playerO(round5)
+    winningTest(round6)
     print(round6)
     round7 = playerX(round6)
+    winningTest(round5)
     print(round7)
     round8 = playerO(round7)
+    winningTest(round5)
     print(round8)
     round9 = playerX(round8)
+    winningTest(round5)
     print(round9)
 
 #display gameBoard
